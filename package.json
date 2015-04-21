@@ -1,0 +1,20 @@
+{
+  "name": "add-repo-url",
+  "version": "1.0.0",
+  "description": "Add the repository information to a package.json.",
+  "bin": "bin/add-repo-url",
+  "scripts": {},
+  "author": "José F. Romaniello <jfromaniello@gmail.com> (http://joseoncode.com)",
+  "license": "MIT",
+  "dependencies": {
+    "giturl": "0.0.3"
+  },
+  "homepage": "https://github.com/jfromaniello/add-repo-url",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jfromaniello/add-repo-url.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jfromaniello/add-repo-url/issues"
+  }
+}

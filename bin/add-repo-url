@@ -1,0 +1,29 @@
+#!/usr/bin/env node
+
+var fs = require('fs');
+var path = require('path');
+var exec = require('child_process').exec;
+var giturl = require('giturl');
+
+var pkg_path = path.join(process.cwd(), 'package.json');
+var pkg = JSON.parse(fs.readFileSync(pkg_path, 'utf8'));
+
+exec('git config --get remote.origin.url', function (err, stdout, stderr) {
+  if (err) {
+    console.error(err.message);
+    return process.exit(1);
+  }
+
+  var url = giturl.parse(stdout.trim());
+
+  pkg.homepage = url;
+  pkg.repository = {
+    type: 'git',
+    url: url + '.git'
+  };
+  pkg.bugs = {
+    url: url + '/issues'
+  };
+
+  fs.writeFileSync(pkg_path, JSON.stringify(pkg, null, 2));
+});
