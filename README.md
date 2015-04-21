@@ -64,4 +64,4 @@ As you can see **add-repo-url** will add `homepage`, `repository` and `bugs`.
 
 ## License
 
-MIT 2015 - José F. Romaniellos
+MIT 2015 - José F. Romaniello
